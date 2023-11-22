@@ -164,7 +164,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--max_unlearn_steps",
         type=int,
-        default=300,
+        default=800,
         help="Max number of unlearning steps.",
     )
     parser.add_argument(
@@ -183,7 +183,7 @@ if __name__ == "__main__":
         help="Weight on normal loss.",
     )
     parser.add_argument(
-        "--batch_size", type=int, default=2, help="Batch size of unlearning."
+        "--batch_size", type=int, default=1, help="Batch size of unlearning."
     )
     parser.add_argument("--lr", type=float, default=2e-6, help="Unlearning LR.")
     parser.add_argument(

@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=12:00:00
 #SBATCH --mem=64GB
-#SBATCH --gres=gpu:v100:2
+#SBATCH --gres=gpu:rtx8000:1
 #SBATCH --job-name=unlearning
 #SBATCH --output=baseline_2.out
 

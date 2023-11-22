@@ -1,0 +1,17 @@
+2023-11-22-04-01,375 root INFO use_lora: False
+2023-11-22-04-01,376 root INFO max_unlearn_steps: 800
+2023-11-22-04-01,376 root INFO bad_weight: 0.5
+2023-11-22-04-01,376 root INFO random_weight: 1
+2023-11-22-04-01,376 root INFO normal_weight: 1
+2023-11-22-04-01,376 root INFO batch_size: 1
+2023-11-22-04-01,376 root INFO lr: 2e-06
+2023-11-22-04-01,376 root INFO max_bad_loss: 100
+2023-11-22-04-01,376 root INFO model_name: facebook/opt-1.3b
+2023-11-22-04-01,376 root INFO model_save_dir: /scratch/sg7729/machine-unlearning/models/opt1.3b_unlearned
+2023-11-22-04-01,376 root INFO save_every: 500
+2023-11-22-04-01,376 root INFO log_file: /scratch/sg7729/machine-unlearning/logs/opt-1.3b-unlearn.log
+2023-11-22-04-02,472 root INFO batch: 0, bad_loss: 1.94, current_div_loss: 3.66, 
+2023-11-22-04-02,980 root INFO batch: 1, bad_loss: 2.12, current_div_loss: 2.82, 
+2023-11-22-04-02,453 root INFO batch: 2, bad_loss: 2.96, current_div_loss: 3.07, 
+2023-11-22-04-02,919 root INFO batch: 3, bad_loss: 2.35, current_div_loss: 3.22, 
+2023-11-22-04-02,450 root INFO batch: 4, bad_loss: 2.21, current_div_loss: 3.50, 

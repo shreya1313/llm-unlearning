@@ -1,0 +1,20 @@
+Asking to pad to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no padding.
+Asking to truncate to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no truncation.
+You're using a GPT2TokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+batch: 0, bad_loss: 1.94, current_div_loss: 3.66, 
+batch: 1, bad_loss: 2.12, current_div_loss: 2.82, 
+batch: 2, bad_loss: 2.96, current_div_loss: 3.07, 
+batch: 3, bad_loss: 2.35, current_div_loss: 3.22, 
+batch: 4, bad_loss: 2.21, current_div_loss: 3.50, 
+Traceback (most recent call last):
+  File "/scratch/sg7729/machine-unlearning/unlearn_harm.py", line 227, in <module>
+    main(args)
+  File "/scratch/sg7729/machine-unlearning/unlearn_harm.py", line 127, in main
+    accelerator.backward(loss)
+  File "/ext3/miniconda3/lib/python3.11/site-packages/accelerate/accelerator.py", line 1985, in backward
+    loss.backward(**kwargs)
+  File "/ext3/miniconda3/lib/python3.11/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/ext3/miniconda3/lib/python3.11/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 394.00 MiB. GPU 0 has a total capacty of 31.74 GiB of which 199.62 MiB is free. Including non-PyTorch memory, this process has 31.54 GiB memory in use. Of the allocated memory 31.03 GiB is allocated by PyTorch, and 139.95 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
