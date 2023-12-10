@@ -155,10 +155,10 @@ def train_model(model, train_loader, val_loader, optimizer, device, num_epochs):
 
         print(f'Epoch {epoch+1}, Training Loss: {total_loss/len(train_loader)},Train Accuracy: {train_accuracy}, Validation Loss: {val_loss/len(val_loader)}, Validation Accuracy: {val_accuracy}')
 
-train_model(model, train_loader, val_loader, optimizer, device, num_epochs=15)
+train_model(model, train_loader, val_loader, optimizer, device, num_epochs=3)
 
 
 # Save the tokenizer and model in the same directory
-output_dir = "/models/bert-finetuned"
+output_dir = "/scratch/sg7729/machine-unlearning/classifier/models/bert-finetuned"
 model.save_pretrained(output_dir)  # Save model's state dictionary and configuration
 tokenizer.save_pretrained(output_dir)  # Save tokenizer's configuration and vocabulary
