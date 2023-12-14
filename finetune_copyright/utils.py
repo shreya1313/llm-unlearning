@@ -8,7 +8,7 @@ import random
 import numpy as np
 import pandas as pd
 import torch
-from datasets import Dataset
+from datasets import Dataset,load_dataset
 from transformers import DataCollatorForLanguageModeling
 
 torch.manual_seed(8888)
@@ -16,93 +16,76 @@ np.random.seed(8888)
 random.seed(8888)
 
 
-# def create_pku_dataloader_from_dataset(tokenizer, dataset, fraction=1.0, batch_size=4):
-#     """
-#     Given the PKU dataset, create the dataloader on the unlearned harmful Q&A pairs.
+def create_lotr_dataloader_from_dataset(tokenizer, dataset, fraction=1.0, batch_size=4):
+    """
+    Given the PKU dataset, create the dataloader on the unlearned harmful Q&A pairs.
 
-#     Args:
-#         tokenizer: Tokenizer.
-#         dataset: Loaded PKU dataset.
-#         fraction: <1 will do downsampling.
-#         batch_size: Batch size.
+    Args:
+        tokenizer: Tokenizer.
+        dataset: Loaded PKU dataset.
+        fraction: <1 will do downsampling.
+        batch_size: Batch size.
 
-#     Returns:
-#         Data loader of PKU harmful Q&A pairs.
-#     """
+    Returns:
+        Data loader of PKU harmful Q&A pairs.
+    """
 
-#     # Preproccess function.
-#     def preproccess(examples):
-#         """
-#         Input: Dict[List]
-#         Output: Dict[List]
-#         """
-#         results = {"input_ids": [], "attention_mask": [], "start_locs": []}
+    # Preproccess function.
+    def preproccess(examples):
+        """
+        Input: Dict[List]
+        Output: Dict[List]
+        """
+        results = {"input_ids": [], "attention_mask": [], "start_locs": []}
 
-#         for i in range(len(examples["prompt"])):
-#             # Subsample if needed.
-#             if random.random() > fraction:
-#                 continue
+        for i in range(len(examples["texts"])):
+            # Subsample if needed.
+            if random.random() > fraction:
+                continue
 
-#             prompt = examples["prompt"][i]
-#             response_list = []
+            prompt = examples["texts"][i]
+            response = examples["labels"][i]
 
-#             # Add only bad samples.
-#             if not examples["is_response_0_safe"][i]:
-#                 response_list.append(examples["response_0"][i])
-#             if not examples["is_response_1_safe"][i]:
-#                 response_list.append(examples["response_1"][i])
+            # Add all responses to results or skip if none.
 
-#             # Add all responses to results or skip if none.
-#             for response in response_list:
-#                 text = f"### Question: {prompt}\n ### Answer: {response}"
-#                 tokenized = tokenizer(text, truncation=True, padding="max_length")
-#                 results["input_ids"].append(tokenized["input_ids"])
-#                 results["attention_mask"].append(tokenized["attention_mask"])
-#                 # Calculate start idx for answer
-#                 test_text = f"### Question: {prompt}\n ### Answer: "
-#                 test_tokenized = tokenizer(
-#                     test_text, truncation=True, padding="max_length"
-#                 )
-#                 results["start_locs"].append(len(test_tokenized["input_ids"]) - 1)
+            text = f"### {prompt} {response}"
+            tokenized = tokenizer(text, truncation=True, padding="max_length")
+            results["input_ids"].append(tokenized["input_ids"])
+            results["attention_mask"].append(tokenized["attention_mask"])
+            # Calculate start idx for answer
+            test_text = f"### {prompt} "
+            test_tokenized = tokenizer(
+                test_text, truncation=True, padding="max_length"
+            )
+            results["start_locs"].append(len(test_tokenized["input_ids"]) - 1)
 
-#         return results
+        return results
 
-#     # Need to drop all original columns to emit more than one row for each original row https://huggingface.co/docs/datasets/about_map_batch#input-size-output-size.
-#     dataset = dataset.map(
-#         preproccess,
-#         batched=True,
-#         remove_columns=[
-#             "prompt",
-#             "response_0",
-#             "response_1",
-#             "is_response_0_safe",
-#             "is_response_1_safe",
-#             "better_response_id",
-#             "safer_response_id",
-#         ],
-#     )
-#     dataset.set_format(
-#         type="torch", columns=["input_ids", "attention_mask", "start_locs"]
-#     )
+    # Need to drop all original columns to emit more than one row for each original row https://huggingface.co/docs/datasets/about_map_batch#input-size-output-size.
+    dataset = dataset.map(
+        preproccess,
+        batched=True,
+        remove_columns=[
+            "texts",
+            "labels"
+        ],
+    )
+    dataset.set_format(
+        type="torch", columns=["input_ids", "attention_mask", "start_locs"]
+    )
 
-#     # Add labels and make it data loader.
-#     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
-
-#     dataloader = torch.utils.data.DataLoader(
-#         dataset, batch_size=batch_size, collate_fn=data_collator
-#     )
-
-#     return dataloader
-
-def create_lotr_dataloader_from_dataset(tokenizer, dataset, batch_size=4):
+    # Add labels and make it data loader.
     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
+
     dataloader = torch.utils.data.DataLoader(
         dataset, batch_size=batch_size, collate_fn=data_collator
     )
+
     return dataloader
 
 
-def create_truthfulqa_dataloader(tokenizer, batch_size=4):
+
+def create_bookcorpse_dataloader(tokenizer, batch_size=4):
     """
     Create the TruthfulQA dataloader for the normal data.
 
@@ -113,17 +96,27 @@ def create_truthfulqa_dataloader(tokenizer, batch_size=4):
     Returns:
         Data loader of TruthfulQA normal Q&A pairs.
     """
-    df = pd.read_csv("data/TruthfulQA.csv")
-    questions, good_answers = df["Question"].values, df["Best Answer"].values
+    normal_dataset = load_dataset("saibo/bookcorpus_compact_256")
+    print(len(normal_dataset))
+    texts = normal_dataset["train"][:30000]
+    # Access the "train" column
+    train_column = texts["text"]
+    print("# of examples",len(train_column))
+
+    # Combine all text into one string
+    combined_text = " ".join(train_column)
+    print("text combined", len(combined_text))
 
     data = {"input_ids": [], "attention_mask": []}
-    for question, good_answer in zip(questions, good_answers):
-        text = f"### Question: {question}\n ### Answer: {good_answer}"
+    for text in train_column:
+        text = f"### {text}"
         tokenized = tokenizer(text, truncation=True, padding="max_length")
         data["input_ids"].append(tokenized["input_ids"])
         data["attention_mask"].append(tokenized["attention_mask"])
 
     dataset = Dataset.from_dict(data)
+    print(len(dataset))
+    print("dataset created")
 
     # Split train/val/test = 0.7/0.1/0.2.
     train_len = int(0.7 * len(dataset))
@@ -146,7 +139,7 @@ def create_truthfulqa_dataloader(tokenizer, batch_size=4):
         test_data, batch_size=batch_size, collate_fn=data_collator, shuffle=True
     )
 
-    return train_dataloader, val_dataloader, test_dataloader
+    return train_dataloader, combined_text, val_dataloader, test_dataloader
 
 
 def get_truthfulQA_answers_plaintext(tqa_file_path="data/TruthfulQA.csv"):
@@ -202,13 +195,13 @@ def compute_kl(pretrained_model, current_model, batch, device):
             attention_mask=batch["attention_mask"].to(device),
             labels=batch["labels"].to(device),
         )
+    
 
     # P: pretrained model; Q: current model.
     prob_p = torch.nn.functional.softmax(pretrained_outputs.logits, -1)
     prob_q = torch.nn.functional.softmax(normal_outputs.logits, -1)
 
     loss = -(prob_p * torch.log(prob_q + 1e-12)).sum(-1).mean()
-
     return loss
 
 
@@ -225,6 +218,7 @@ def get_answer_loss(operation, batch, model, device="cuda:0"):
     Returns:
        The loss.
     """
+#     print("batch",batch)
     assert operation in ["ga", "gd"], "Operation must be either GA or GD."
     input_ids, attention_mask, start_locs, labels = (
         batch["input_ids"].to(device),
@@ -285,17 +279,15 @@ def get_rand_ans_loss(bad_batch, tokenizer, normal_ans, model, K=5, device="cuda
         single_input_id = bad_input_ids[batch_idx, :]
         ori_text = tokenizer.decode(single_input_id)
         # Get question.
-        question = ori_text.split("###")[1].split("Question:")[-1].strip()
-        question_prefix = f"### Question: {question}\n ### Answer: "
         tokenized_question_prefix = tokenizer(
-            question_prefix, truncation=True, padding="max_length"
+            ori_text, truncation=True, padding="max_length"
         )
         # Doesn't need to minus 1 because there's a starting token in the beginning.
         start_loc = len(tokenized_question_prefix)
 
         # Get random answer.
         for rand_ans in rand_ans_list:
-            random_sample = f"{question_prefix}{rand_ans}"
+            random_sample = f"{ori_text}{rand_ans}"
 
             # Tokenize.
             tokenized_rs = tokenizer(
