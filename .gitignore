@@ -1,6 +1,5 @@
-
 models/
 .ipynb_checkpoints/
 __pycache__/
 data/
-
+finetune_copyright/models/
