@@ -12,12 +12,14 @@ import argparse
 import logging
 import random
 import time
+from dotenv import load_dotenv
+import os
 
 import numpy as np
 import torch
 from accelerate import Accelerator
 from datasets import load_dataset
-from peft import AdaLoraConfig, TaskType, get_peft_model
+from peft import AdaLoraConfig, TaskType, get_peft_model, prepare_model_for_int8_training
 from torch.optim import AdamW
 from transformers import AutoModelForCausalLM, AutoTokenizer, get_scheduler
 from utils import (
@@ -33,24 +35,34 @@ torch.manual_seed(8888)
 np.random.seed(8888)
 random.seed(8888)
 
+torch.cuda.empty_cache()
+
+load_dotenv()
+access_token = os.getenv("ACCESS_TOKEN")
+# model_name = "/scratch/sa6981/llm_unlearn/models/opt1.3b_unlearned_baseline"
 
 def main(args) -> None:
     accelerator = Accelerator()
     device = accelerator.device
     model = AutoModelForCausalLM.from_pretrained(args.model_name)
+#     model = torch.load(model_name)
+#     model = prepare_model_for_int8_training(model)
+#     model = DistributedDataParallel(model)
     # If use LoRA.
-    if args.use_lora:
-        peft_config = AdaLoraConfig(
-            task_type=TaskType.CAUSAL_LM,
-            inference_mode=False,
-            r=32,
-            lora_alpha=16,
-            target_modules=["q_proj", "v_proj"],
-        )
-        model = get_peft_model(model, peft_config)
+#     if args.use_lora:
+#         peft_config = AdaLoraConfig(
+#             task_type=TaskType.CAUSAL_LM,
+#             inference_mode=False,
+#             r=32,
+#             lora_alpha=16,
+#             target_modules=["q_proj", "v_proj"],
+#         )
+#         model = get_peft_model(model, peft_config)
 
     model.to(device)
     tokenizer = AutoTokenizer.from_pretrained(args.model_name)
+    # Set the padding token to the end-of-sequence token
+    tokenizer.pad_token = tokenizer.eos_token
 
     # Load harmful data.
     train_dataset = load_dataset("PKU-Alignment/PKU-SafeRLHF", split="train")
@@ -159,12 +171,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
-    parser.add_argument("--use_lora", action="store_true")
+#     parser.add_argument("--use_lora", action="store_true")
 
     parser.add_argument(
         "--max_unlearn_steps",
         type=int,
-        default=800,
+        default=1000,
         help="Max number of unlearning steps.",
     )
     parser.add_argument(
@@ -183,7 +195,7 @@ if __name__ == "__main__":
         help="Weight on normal loss.",
     )
     parser.add_argument(
-        "--batch_size", type=int, default=1, help="Batch size of unlearning."
+        "--batch_size", type=int, default=2, help="Batch size of unlearning."
     )
     parser.add_argument("--lr", type=float, default=2e-6, help="Unlearning LR.")
     parser.add_argument(
