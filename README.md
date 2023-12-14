@@ -4,48 +4,114 @@
 
 ## Dataset - TruthfuQA, PKU-SafeRLHF
 
-## Models
-## https://github.com/kevinyaobytedance/llm_unlearn
-- OPT-1.3B
-- OPT-2.7B
-- Llama 2 (7B)
+# Repository Structure
 
-## Implementation
+This repository is organized with a clear structure to help users navigate through different components and functionalities. Below is an overview of the folder structure:
 
-Tasks:
+### `classifier/`
 
-- Dataset preparation - ?
+- **`data/`**: Contains dataset files for training and testing.
+  - `sample_submission.csv`
+  - `test.csv`
+  - `test_labels.csv`
+  - `train.csv`
 
-- Training Unlearning
+- **`data_preprocess.py`**: Script for data preprocessing.
+- **`download_dataset.py`**: Script for downloading datasets.
+- **`eval.py`**: Evaluation script.
+- **`inference.py`**: Script for model inference.
+- **`model.py`**: Defines the model architecture.
+- **`models/`**: Directory to store pre-trained models.
+  - `bert-finetuned/`: Example pre-trained model directory.
+    - `config.json`
+    - `pytorch_model.bin`
+    - `special_tokens_map.json`
+    - `tokenizer_config.json`
+    - `vocab.txt`
 
-- Inference 5 examples
+- **`scripts/`**: Contains various scripts.
+  - `train_2.sh`
+  - `train_3.sh`
+  - `train.sh`
 
-- Evalution - From paper
+- **`train.py`**: Training script.
+- **`utils.py`**: Utility functions.
 
-# Novelity
+### `copyright/`
 
-## Dataest
+- Various files related to copyright and licensing.
+- **`args.py`**: Script for handling command-line arguments.
+- **`config.py`**: Configuration file.
+- **`create_dataset.ipynb`**: Jupyter notebook for creating datasets.
+- **`extracted_text.jsonl`**: JSON file containing extracted text.
+- **`test_unlearned.ipynb`**: Jupyter notebook for testing unlearned models.
+- **`train_and_test.ipynb`**: Jupyter notebook for training and testing.
+- **`training.py`**: Training script.
+- **`training_utils.py`**: Utility functions for training.
+- **`unlearned_DatasetDict_small.pkl`**: Pickle file containing unlearned dataset.
+- **`unlearn.ipynb`**: Jupyter notebook for unlearning.
+- **`utils.py`**: General utility functions.
 
-Tasks:
+### `evaluator/`
 
-- Find dataset for harmful (check HarmfulQA)
+- Evaluation-related scripts.
+  - `evaluate_dataset_opt2.py`
+  - `evaluate_dataset.py`
+  - `evaluate.py`
 
-- Find dataset for copyright (Harry potter check)
+### `logs/`
 
-## Models
+- Log files from various runs.
+  - `1.3b_unlearned.out`
+  - `baseline_2.out`
+  - `baseline_2_test-1.out`
+  - ...
 
-- OPT-1.3B
-- OPT-2.7B
-- Llama 2 (7B)
+### `models/`
 
-## Implementation
+- Model directories.
+  - `llama-7b_unlearned_ipy/`
+    - `adapter_config.json`
+    - `adapter_model.bin`
+    - `README.md`
+  - `opt1.3b_unlearned/`
+    - `config.json`
+    - `generation_config.json`
+    - `pytorch_model.bin`
 
-Tasks:
+### `scripts/`
 
-- Dataset preparation 
+- Various scripts for different tasks.
+  - `baseline_2.sh`
+  - `baseline_3.sh`
+  - `baseline.sh`
+  - ...
 
-- Training Unlearning
+### `__pycache__/`
 
-- Inference 5 examples
+- Python bytecode cache.
 
-- Evalution 
+### `README.md`
+
+- This file, providing an overview of the repository structure.
+
+### `requirements.txt`
+
+- List of dependencies for running the project.
+
+### `run_demo.py`
+
+- Script for running the demonstration.
+
+### `test_baseline_models.ipynb`
+
+- Jupyter notebook for testing baseline models.
+
+### `unlearn_harm.py`
+
+- Script for unlearning harmful information.
+
+### `utils.py`
+
+- General utility functions.
+
