@@ -1,8 +1,13 @@
-# machine-unlearning
+# Large Language Model Unlearning
 
-# Replication
+Zero Shot Context-Based Object Segmentation using SLIP (SAM+CLIP)
 
-## Dataset - TruthfuQA, PKU-SafeRLHF
+# Goal
+
+The goal of the project is to enhance the capabilities of the SAM (Segment Anything Model [1](#references)) model by incorporating text prompts using CLIP (Contrastive Language-Image Pretraining [2](#references)). This integration, known as SLIP (SAM with CLIP), aims to enable object segmentation without the need for prior training on specific classes or categories. 
+
+# Dataset
+
 
 # How to Run
 
