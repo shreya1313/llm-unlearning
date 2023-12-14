@@ -4,6 +4,11 @@
 
 Develop efficient machine unlearning algorithms for Large Language Models (LLMs) to address deletion requests, copyright concerns, and mitigate harmful response generation. The objective is to ensure compliance, ethical alignment, and bolster trust in AI by overcoming hurdles in selective knowledge erasure 
 
+## Flow Diagrams
+
+![](https://github.com/shreya1313/llm-unlearning/blob/main/snapshots/Flowchart-harmful.png)
+![](https://github.com/shreya1313/llm-unlearning/blob/main/snapshots/Flowchart-copyright.png)
+
 ## Dataset
 
 - [**TruthfulQA Extended Dataset:**](https://github.com/sylinrl/TruthfulQA) Dataset sourced from TruthfulQA, providing supplementary questions, categories, best answers, and correct answers to enrich the diversity of normal model behaviour.
