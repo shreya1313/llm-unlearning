@@ -153,13 +153,12 @@ This repository is organized with a clear structure to help users navigate throu
 ## Documentation
 - Project report can be found at [docs/Report.pdf](https://github.com/tommarvoloriddle/SLIP/blob/main/docs/SLIP.pdf)
 
-<a name="references"></a>
-## References
-[1] Kirillov, A.; Mintun, E.; Ravi, N.; Mao, H.; Rolland, C.; Gustafson, L.; Xiao, T.; Whitehead, S.; Berg, A. C.; Lo, W.Y.; Doll ́ar, P.; and Girshick, R. 2023. Segment Anything. arXiv:2304.02643.
+# References
 
-[2] Radford, A.; Kim, J. W.; Hallacy, C.; Ramesh, A.; Goh, G.; Agarwal, S.; Sastry, G.; Askell, A.; Mishkin, P.; Clark, J.; Krueger, G.; and Sutskever, I. 2021. Learning Transferable Visual Models From Natural Language Supervision. arXiv:2103.00020.
+- [**Large Language Model Unlearning** (Yao et al. 2023)](https://arxiv.org/pdf/2310.10683v1.pdf)
 
-[3] [Contrastive Language-Image Pre-training](https://github.com/kvgarimella/dl-demos/blob/main/demo11-clip.ipynb)
+- [**Knowledge Unlearning for Mitigating Privacy Risks in Language Models** (Jang et al. 2023)](https://arxiv.org/pdf/2210.01504.pdf)
+
 
 ## Authors
 - Arushi Arora: aa10350@nyu.edu
