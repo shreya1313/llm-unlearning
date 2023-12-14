@@ -110,18 +110,6 @@ This repository is organized with a clear structure to help users navigate throu
   - `baseline_2_test-1.out`
   - ...
 
-### `models/`
-
-- Model directories.
-  - `llama-7b_unlearned_ipy/`
-    - `adapter_config.json`
-    - `adapter_model.bin`
-    - `README.md`
-  - `opt1.3b_unlearned/`
-    - `config.json`
-    - `generation_config.json`
-    - `pytorch_model.bin`
-
 ### `scripts/`
 
 - Various scripts for different tasks.
@@ -129,10 +117,6 @@ This repository is organized with a clear structure to help users navigate throu
   - `baseline_3.sh`
   - `baseline.sh`
   - ...
-
-### `__pycache__/`
-
-- Python bytecode cache.
 
 ### `README.md`
 
