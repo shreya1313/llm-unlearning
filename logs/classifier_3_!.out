@@ -1,0 +1,50 @@
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+numbers of training Dataset  127656
+numbers of testing Dataset 15957
+numbers of validation Dataset 15958
+Batch Size : 32
+Each Input ids shape : torch.Size([32, 128])
+Input ids :
+ tensor([  101, 20121,  2848,  4199,   102,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0])
+Corresponding Decoded text:
+ [CLS] apostle peter rome [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+Corresponding Attention Mask :
+ tensor([1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+Corresponding Label: tensor([0., 0., 0., 0., 0., 0.])
+Epoch 1, Step 150, Training Loss: 0.057345032691955566
+Epoch 1, Step 300, Training Loss: 0.023625463247299194
+Epoch 1, Step 450, Training Loss: 0.04401146620512009
+Epoch 1, Step 600, Training Loss: 0.049061067402362823
+Epoch 1, Step 750, Training Loss: 0.011333489790558815
+Epoch 1, Training Loss: 0.013849607640632281,Train Accuracy: 0.9778645833333334, Validation Loss: 0.0503044133550508, Validation Accuracy: 0.9811797635459748
+Epoch 2, Step 150, Training Loss: 0.06565114110708237
+Epoch 2, Step 300, Training Loss: 0.10666247457265854
+Epoch 2, Step 450, Training Loss: 0.13449102640151978
+Epoch 2, Step 600, Training Loss: 0.06260377168655396
+Epoch 2, Step 750, Training Loss: 0.08108042180538177
+Epoch 2, Training Loss: 0.00961360477866899,Train Accuracy: 0.9819043803418803, Validation Loss: 0.047593919232763904, Validation Accuracy: 0.9819735138070769
+Epoch 3, Step 150, Training Loss: 0.039508920162916183
+Epoch 3, Step 300, Training Loss: 0.016859162598848343
+Epoch 3, Step 450, Training Loss: 0.07664064317941666
+Epoch 3, Step 600, Training Loss: 0.01703896000981331
+Epoch 3, Step 750, Training Loss: 0.030850736424326897
+Epoch 3, Training Loss: 0.008877597606383769,Train Accuracy: 0.9832064636752137, Validation Loss: 0.04475497238698205, Validation Accuracy: 0.9820675105485233

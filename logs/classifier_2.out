@@ -1,0 +1,131 @@
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Truncation was not explicitly activated but `max_length` is provided a specific value, please use `truncation=True` to explicitly truncate examples to max length. Defaulting to 'longest_first' truncation strategy. If you encode pairs of sequences (GLUE-style) with the tokenizer you can select this strategy more precisely by providing a specific strategy to `truncation`.
+numbers of training Dataset  127656
+numbers of testing Dataset 15957
+numbers of validation Dataset 15958
+Batch Size : 32
+Each Input ids shape : torch.Size([32, 128])
+Input ids :
+ tensor([  101,  5564,  1045,  2010,  2193, 27588,  2106,  2498,  2032,  2023,
+         2051,  2442,  2031,  2042,  2028,  2060, 27588,  2015,  2029,  2045,
+         3711,  2022,  3652,  2862,  2021,  2035,  2025,  2439,  2049,  7780,
+         2054,  2015,  2039,  9986,   102,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
+            0,     0,     0,     0,     0,     0,     0,     0])
+Corresponding Decoded text:
+ [CLS] meanwhile i his number vulture did nothing him this time must have been one other vultures which there appear be growing list but all not lost its inspiration whats up doc [SEP] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD] [PAD]
+Corresponding Attention Mask :
+ tensor([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0])
+Corresponding Label: tensor([0., 0., 0., 0., 0., 0.])
+Epoch 1, Step 150, Training Loss: 0.03926221653819084
+Epoch 1, Step 300, Training Loss: 0.0342201329767704
+Epoch 1, Step 450, Training Loss: 0.07960225641727448
+Epoch 1, Step 600, Training Loss: 0.020649505779147148
+Epoch 1, Step 750, Training Loss: 0.15948891639709473
+Epoch 1, Training Loss: 0.015010840185500102,Train Accuracy: 0.9739850427350427, Validation Loss: 0.05153739260405093, Validation Accuracy: 0.9812006517107407
+Epoch 2, Step 150, Training Loss: 0.060828398913145065
+Epoch 2, Step 300, Training Loss: 0.03624666482210159
+Epoch 2, Step 450, Training Loss: 0.04003870487213135
+Epoch 2, Step 600, Training Loss: 0.011276651173830032
+Epoch 2, Step 750, Training Loss: 0.03209506720304489
+Epoch 2, Training Loss: 0.009657256044610813,Train Accuracy: 0.9818108974358974, Validation Loss: 0.052140473596469866, Validation Accuracy: 0.9798638091657267
+Epoch 3, Step 150, Training Loss: 0.005888804327696562
+Epoch 3, Step 300, Training Loss: 0.0379740409553051
+Epoch 3, Step 450, Training Loss: 0.07160582393407822
+Epoch 3, Step 600, Training Loss: 0.03220656141638756
+Epoch 3, Step 750, Training Loss: 0.0528595857322216
+Epoch 3, Training Loss: 0.009235335774935623,Train Accuracy: 0.9826455662393162, Validation Loss: 0.050780165568180755, Validation Accuracy: 0.9809708818983164
+Epoch 4, Step 150, Training Loss: 0.012865378521382809
+Epoch 4, Step 300, Training Loss: 0.05078660696744919
+Epoch 4, Step 450, Training Loss: 0.07998023927211761
+Epoch 4, Step 600, Training Loss: 0.0015940333250910044
+Epoch 4, Step 750, Training Loss: 0.028764918446540833
+Epoch 4, Training Loss: 0.008658124725503572,Train Accuracy: 0.9833533653846154, Validation Loss: 0.0475087749359071, Validation Accuracy: 0.9818899611480135
+Epoch 5, Step 150, Training Loss: 0.08484223484992981
+Epoch 5, Step 300, Training Loss: 0.045966193079948425
+Epoch 5, Step 450, Training Loss: 0.04496605694293976
+Epoch 5, Step 600, Training Loss: 0.04019958898425102
+Epoch 5, Step 750, Training Loss: 0.03847108408808708
+Epoch 5, Training Loss: 0.008422113308667866,Train Accuracy: 0.983500267094017, Validation Loss: 0.04935668865678354, Validation Accuracy: 0.9821301750428207
+Epoch 6, Step 150, Training Loss: 0.04839619994163513
+Epoch 6, Step 300, Training Loss: 0.029209133237600327
+Epoch 6, Step 450, Training Loss: 0.09296104311943054
+Epoch 6, Step 600, Training Loss: 0.0717664361000061
+Epoch 6, Step 750, Training Loss: 0.021735604852437973
+Epoch 6, Training Loss: 0.007572650325042254,Train Accuracy: 0.9851428952991453, Validation Loss: 0.0491357713563084, Validation Accuracy: 0.9801353553076827
+Epoch 7, Step 150, Training Loss: 0.024560807272791862
+Epoch 7, Step 300, Training Loss: 0.03212043270468712
+Epoch 7, Step 450, Training Loss: 0.022070109844207764
+Epoch 7, Step 600, Training Loss: 0.04578959196805954
+Epoch 7, Step 750, Training Loss: 0.042068369686603546
+Epoch 7, Training Loss: 0.007084282800931026,Train Accuracy: 0.9860243055555555, Validation Loss: 0.043451964778672594, Validation Accuracy: 0.9834565735054518
+Epoch 8, Step 150, Training Loss: 0.06278999894857407
+Epoch 8, Step 300, Training Loss: 0.061217181384563446
+Epoch 8, Step 450, Training Loss: 0.07983576506376266
+Epoch 8, Step 600, Training Loss: 0.04308187589049339
+Epoch 8, Step 750, Training Loss: 0.04285519942641258
+Epoch 8, Training Loss: 0.007046189586857199,Train Accuracy: 0.9859508547008548, Validation Loss: 0.04524681089191188, Validation Accuracy: 0.9834147971759202
+Epoch 9, Step 150, Training Loss: 0.12439854443073273
+Epoch 9, Step 300, Training Loss: 0.043614692986011505
+Epoch 9, Step 450, Training Loss: 0.009728756733238697
+Epoch 9, Step 600, Training Loss: 0.002982539590448141
+Epoch 9, Step 750, Training Loss: 0.052567508071660995
+Epoch 9, Training Loss: 0.006552169867652646,Train Accuracy: 0.9870125534188035, Validation Loss: 0.04704417536164193, Validation Accuracy: 0.9823286126080962
+Epoch 10, Step 150, Training Loss: 0.033572953194379807
+Epoch 10, Step 300, Training Loss: 0.01433706283569336
+Epoch 10, Step 450, Training Loss: 0.044519998133182526
+Epoch 10, Step 600, Training Loss: 0.04478049278259277
+Epoch 10, Step 750, Training Loss: 0.033643029630184174
+Epoch 10, Training Loss: 0.006622632468112845,Train Accuracy: 0.9871060363247863, Validation Loss: 0.05038625304330559, Validation Accuracy: 0.9822763921961817
+Epoch 11, Step 150, Training Loss: 0.03122848831117153
+Epoch 11, Step 300, Training Loss: 0.00393277732655406
+Epoch 11, Step 450, Training Loss: 0.019393842667341232
+Epoch 11, Step 600, Training Loss: 0.011914229020476341
+Epoch 11, Step 750, Training Loss: 0.06652164459228516
+Epoch 11, Training Loss: 0.006344544110769513,Train Accuracy: 0.987252938034188, Validation Loss: 0.0465852231661442, Validation Accuracy: 0.9825374942557547
+Epoch 12, Step 150, Training Loss: 0.03320982679724693
+Epoch 12, Step 300, Training Loss: 0.03860281780362129
+Epoch 12, Step 450, Training Loss: 0.03703894093632698
+Epoch 12, Step 600, Training Loss: 0.0674857348203659
+Epoch 12, Step 750, Training Loss: 0.03942663222551346
+Epoch 12, Training Loss: 0.006055656065761735,Train Accuracy: 0.9883079594017095, Validation Loss: 0.050521652240883314, Validation Accuracy: 0.9830701424572837
+Epoch 13, Step 150, Training Loss: 0.042565908282995224
+Epoch 13, Step 300, Training Loss: 0.051267530769109726
+Epoch 13, Step 450, Training Loss: 0.0019873441196978092
+Epoch 13, Step 600, Training Loss: 0.015836481004953384
+Epoch 13, Step 750, Training Loss: 0.027236107736825943
+Epoch 13, Training Loss: 0.005909444559267769,Train Accuracy: 0.9882678952991453, Validation Loss: 0.0464638371047618, Validation Accuracy: 0.9830492542925179
+Epoch 14, Step 150, Training Loss: 0.02647906169295311
+Epoch 14, Step 300, Training Loss: 0.06447106599807739
+Epoch 14, Step 450, Training Loss: 0.011370936408638954
+Epoch 14, Step 600, Training Loss: 0.005855049937963486
+Epoch 14, Step 750, Training Loss: 0.023968487977981567
+Epoch 14, Training Loss: 0.005636195842733077,Train Accuracy: 0.9886084401709402, Validation Loss: 0.04928474955168368, Validation Accuracy: 0.9833312445168567
+Epoch 15, Step 150, Training Loss: 0.014937330037355423
+Epoch 15, Step 300, Training Loss: 0.024858063086867332
+Epoch 15, Step 450, Training Loss: 0.032781124114990234
+Epoch 15, Step 600, Training Loss: 0.031575411558151245
+Epoch 15, Step 750, Training Loss: 0.06764715164899826
+Epoch 15, Training Loss: 0.005488859643693721,Train Accuracy: 0.9893162393162394, Validation Loss: 0.050264634137631645, Validation Accuracy: 0.981837740736099
+Traceback (most recent call last):
+  File "/scratch/sg7729/machine-unlearning/classifier/train.py", line 163, in <module>
+    model.save_pretrained(output_dir)  # Save model's state dictionary and configuration
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/ext3/miniconda3/lib/python3.11/site-packages/transformers/modeling_utils.py", line 1967, in save_pretrained
+    os.makedirs(save_directory, exist_ok=True)
+  File "<frozen os>", line 215, in makedirs
+  File "<frozen os>", line 225, in makedirs
+OSError: [Errno 30] Read-only file system: '/models'

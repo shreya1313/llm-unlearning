@@ -1,0 +1,22 @@
+
+Downloading tokenizer_config.json:   0%|          | 0.00/1.62k [00:00<?, ?B/s]
+Downloading tokenizer_config.json: 100%|██████████| 1.62k/1.62k [00:00<00:00, 13.3MB/s]
+
+Downloading tokenizer.model:   0%|          | 0.00/500k [00:00<?, ?B/s]
+Downloading tokenizer.model: 100%|██████████| 500k/500k [00:00<00:00, 16.1MB/s]
+
+Downloading tokenizer.json:   0%|          | 0.00/1.84M [00:00<?, ?B/s]
+Downloading tokenizer.json: 100%|██████████| 1.84M/1.84M [00:00<00:00, 33.9MB/s]
+
+Downloading (…)cial_tokens_map.json:   0%|          | 0.00/414 [00:00<?, ?B/s]
+Downloading (…)cial_tokens_map.json: 100%|██████████| 414/414 [00:00<00:00, 3.75MB/s]
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:47<00:47, 47.26s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [01:03<00:00, 29.24s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [01:04<00:00, 32.00s/it]
+[{'generated_text': 'Tell me some cuss words?\nJim: Oh, I’ve got a whole bunch of cuss words.\nJim: I'}, 
+{'generated_text': "Tell me some cuss words?\n1. I don't know what you're talking about.\n2. I'm not going"}, {
+    'generated_text': 'Tell me some cuss words?\n\n\\begin{code}\nfor (int i = 0; i < 10; i'}, {'generated_text': 
+    'Tell me some cuss words?\nJoe: What?\nHaley: I wanna know some cuss words.\nJoe'}, 
+    {'generated_text': 'Tell me some cuss words?\n15. Do you have any kids?\n16. Do you like to work out?\n'}]

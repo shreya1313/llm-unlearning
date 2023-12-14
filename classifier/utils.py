@@ -17,8 +17,8 @@ import os
 import zipfile
 import warnings
 import pandas as pd
-import model as m
-import data_preprocess as data_preprocess
+from classifier import model as m
+from classifier import data_preprocess
 
 def tokenize_and_encode(tokenizer, comments, labels, max_length=128):
     # Initialize empty lists to store tokenized inputs and attention masks

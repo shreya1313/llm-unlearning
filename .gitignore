@@ -3,4 +3,6 @@ models/
 .ipynb_checkpoints/
 __pycache__/
 data/
+classifier/data
+classifier/.ipynb_checkpoints
 
