@@ -4,6 +4,41 @@
 
 ## Dataset - TruthfuQA, PKU-SafeRLHF
 
+# How to Run
+
+Follow the steps below to clone the repository, install the required dependencies, and run the project:
+
+1. **Clone the Repository:**
+
+   ```
+     git clone https://github.com/shreya1313/llm-unlearning.git
+     cd llm-unlearning
+   ```
+
+2. **Install Requirements:**
+   
+   ```
+    pip install -r requirements.txt
+   ```
+3. **Train Unlearning on Harmful Dataset:**
+   
+   ```
+    python unlearn_harm.py
+   ```
+
+4. **Train Classifier:**
+   
+   ```
+    cd classifier
+    python train.py
+   ```
+4. **Evaluate Unlearned Model:**
+   
+   ```
+    cd evaluator
+    python evaluate_dataset.py
+   ```
+
 # Repository Structure
 
 This repository is organized with a clear structure to help users navigate through different components and functionalities. Below is an overview of the folder structure:
