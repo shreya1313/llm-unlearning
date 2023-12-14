@@ -155,3 +155,27 @@ This repository is organized with a clear structure to help users navigate throu
 
 - General utility functions.
 
+# Results
+
+### *To be done*
+
+#### Sample output
+
+### *To be done*
+
+## Documentation
+- Project report can be found at [docs/Report.pdf](https://github.com/tommarvoloriddle/SLIP/blob/main/docs/SLIP.pdf)
+
+<a name="references"></a>
+## References
+[1] Kirillov, A.; Mintun, E.; Ravi, N.; Mao, H.; Rolland, C.; Gustafson, L.; Xiao, T.; Whitehead, S.; Berg, A. C.; Lo, W.Y.; Doll ́ar, P.; and Girshick, R. 2023. Segment Anything. arXiv:2304.02643.
+
+[2] Radford, A.; Kim, J. W.; Hallacy, C.; Ramesh, A.; Goh, G.; Agarwal, S.; Sastry, G.; Askell, A.; Mishkin, P.; Clark, J.; Krueger, G.; and Sutskever, I. 2021. Learning Transferable Visual Models From Natural Language Supervision. arXiv:2103.00020.
+
+[3] [Contrastive Language-Image Pre-training](https://github.com/kvgarimella/dl-demos/blob/main/demo11-clip.ipynb)
+
+## Authors
+- Arushi Arora: aa10350@nyu.edu
+- Saaketh Koundinya : sg7729@nyu.edu
+- Shreya Agarwal : sa6981@nyu.edu
+- Chandana: ct3002@nyu.edu
