@@ -6,9 +6,9 @@ Develop efficient machine unlearning algorithms for Large Language Models (LLMs)
 
 ## Dataset
 
-- **TruthfulQA Extended Dataset:** [Dataset sourced from TruthfulQA, providing supplementary questions, categories, best answers, and correct answers to enrich the diversity of normal model behaviour.](https://github.com/sylinrl/TruthfulQA)
+- [**TruthfulQA Extended Dataset:**](https://github.com/sylinrl/TruthfulQA) Dataset sourced from TruthfulQA, providing supplementary questions, categories, best answers, and correct answers to enrich the diversity of normal model behaviour.
 
-- **HarmfulQA Dataset:**[Incorporating HarmfulQA for safety evaluation and alignment. It comprises 1,960 harmful questions across various topics and subtopics, with 9,536 harmless and 7,356 harmful conversations collected using Chain of Utterances prompts.](https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF)
+- [**HarmfulQA Dataset:**](https://huggingface.co/datasets/PKU-Alignment/PKU-SafeRLHF) Incorporating HarmfulQA for safety evaluation and alignment. It comprises 1,960 harmful questions across various topics and subtopics, with 9,536 harmless and 7,356 harmful conversations collected using Chain of Utterances prompts.
 
 - **Copyright Dataset (Custom):** "The Lord of the Rings" dataset to handle copyrighted content in Large Language Model responses.
 
