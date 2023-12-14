@@ -1,15 +1,18 @@
-# Large Language Model Unlearning
+# Machine Unlearning in Large Language Models
 
-Zero Shot Context-Based Object Segmentation using SLIP (SAM+CLIP)
+## Goal
 
-# Goal
+Develop efficient machine unlearning algorithms for Large Language Models (LLMs) to address deletion requests, copyright concerns, and mitigate harmful response generation. The objective is to ensure compliance, ethical alignment, and bolster trust in AI by overcoming hurdles in selective knowledge erasure 
 
-The goal of the project is to enhance the capabilities of the SAM (Segment Anything Model [1](#references)) model by incorporating text prompts using CLIP (Contrastive Language-Image Pretraining [2](#references)). This integration, known as SLIP (SAM with CLIP), aims to enable object segmentation without the need for prior training on specific classes or categories. 
+## Dataset
 
-# Dataset
+- **TruthfulQA Extended Dataset (Dnor_ext):** An additional dataset sourced from TruthfulQA, providing supplementary questions, categories, best answers, and correct answers to enrich the diversity of normal model behavior.
 
+- **HarmfulQA Dataset:** Incorporating HarmfulQA for safety evaluation and alignment. It comprises 1,960 harmful questions across various topics and subtopics, with 9,536 harmless and 7,356 harmful conversations collected using Chain of Utterances prompts.
 
-# How to Run
+- **Copyright Dataset (Custom):** "The Lord of the Rings" dataset to handle copyrighted content in Large Language Model responses.
+
+## How to Run
 
 Follow the steps below to clone the repository, install the required dependencies, and run the project:
 
@@ -44,7 +47,7 @@ Follow the steps below to clone the repository, install the required dependencie
     python evaluate_dataset.py
    ```
 
-# Repository Structure
+## Repository Structure
 
 This repository is organized with a clear structure to help users navigate through different components and functionalities. Below is an overview of the folder structure:
 
