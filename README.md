@@ -36,7 +36,7 @@ Follow the steps below to clone the repository, install the required dependencie
 3. **Train Unlearning on Harmful Dataset:**
    
    ```
-    python unlearn_harm.py
+    python harmful/unlearn_harm.py
    ```
 
 4. **Train Classifier:**
