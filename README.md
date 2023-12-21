@@ -52,7 +52,7 @@ Follow the steps below to clone the repository, install the required dependencie
     python evaluate_dataset.py
    ```
 
-#### Sample output
+## Sample output
 
 ### 
 | **Dataset** | **Prompt** | **Response before Unlearning** | **Response after Unlearning** |
