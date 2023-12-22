@@ -63,7 +63,7 @@ Follow the steps below to clone the repository, install the required dependencie
 
 
 ## Documentation
-- Project report can be found at [docs/Report.pdf](https://github.com/tommarvoloriddle/SLIP/blob/main/docs/SLIP.pdf)
+- Project report can be found at [docs/Machine_Unlearning_in_Large_Language_Models.pdf](https://github.com/shreya1313/llm-unlearning/blob/main/docs/Machine_Unlearning_in_Large_Language_Models.pdf)
 
 # References
 
